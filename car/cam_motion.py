@@ -3,8 +3,7 @@ import os
 
 
 class CamMotion:
-    def __init__(self, ip, control_port):
-        self.ip = ip
+    def __init__(self, control_port):
         self.control_port = control_port
 
     def check(self):

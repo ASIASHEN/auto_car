@@ -61,7 +61,7 @@ if __name__ == '__main__':
     try:
         cf = read_config()
         my_car = Car(cf)
-        cam = CamMotion(cf['cam_server_ip']['ip'], cf['cam_server_ip']['control_port'])
+        cam = CamMotion(cf['cam_server_ip']['control_port'])
         cam.check()
         server = TCPServer(('', 8001), ResponseHandler)
         server.serve_forever()

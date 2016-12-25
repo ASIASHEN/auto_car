@@ -3,8 +3,6 @@ from collections import OrderedDict
 
 
 class Car:
-    """小车的控制部分，TODO：更多拐弯的方式"""
-
     def __init__(self, cf):
         # 这样生成的字典中元素按照插入的顺序排列
         self.out_mapping_port = OrderedDict()
@@ -36,26 +34,3 @@ class Car:
     def disconnect(self):
         # 清除针脚的状态，有点类似读写文件时的close
         GPIO.cleanup()
-
-    # TODO: 是否需要检查下
-    # 下面的相当于是二驱的模式进行控制
-    def forward(self):
-        self.exec_operation(self, 0b01100110)
-
-    def back(self):
-        self.exec_operation(self, 0b10011001)
-
-    def stop(self):
-        self.exec_operation(self, 0b00000000)
-
-    def front_left(self):
-        self.exec_operation(self, 0b00100010)
-
-    def front_right(self):
-        self.exec_operation(self, 0b01000100)
-
-    def back_left(self):
-        self.exec_operation(self, 0b00010001)
-
-    def back_right(self):
-        self.exec_operation(self, 0b10001000)
